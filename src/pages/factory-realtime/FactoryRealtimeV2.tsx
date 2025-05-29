@@ -1,11 +1,9 @@
 import React from 'react';
-import { Row, Col, Typography } from 'antd';
+import { Row, Col } from 'antd';
 import SensorCharts from './SensorCharts';
 import SystemConsole from './SystemConsole';
 import MainVideoPlayer from './MainVideoPlayer';
 import VideoGrid from './VideoGrid';
-
-const { Title } = Typography;
 
 const FactoryRealtimeV2: React.FC = () => {
   const cardStyle = {

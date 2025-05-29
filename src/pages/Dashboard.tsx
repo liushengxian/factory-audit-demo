@@ -5,7 +5,6 @@ import {
   CheckCircleOutlined, 
   ClockCircleOutlined 
 } from '@ant-design/icons';
-import { useTheme } from '../contexts/ThemeContext';
 
 const { Title } = Typography;
 
@@ -47,7 +46,6 @@ const mockFactories: Factory[] = [
 
 const Dashboard = () => {
   const navigate = useNavigate();
-  const { isDarkMode } = useTheme();
 
   const columns = [
     {

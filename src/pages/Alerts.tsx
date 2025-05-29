@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { Table, Card, Tag, Space, Typography, Select, DatePicker, Button, Modal, Form, Input } from 'antd';
-import { WarningOutlined, InfoCircleOutlined, PlusOutlined, ExclamationCircleOutlined } from '@ant-design/icons';
+import { WarningOutlined, InfoCircleOutlined, PlusOutlined } from '@ant-design/icons';
 import type { RangePickerProps } from 'antd/es/date-picker';
 import dayjs from 'dayjs';
-import { useTheme } from '../contexts/ThemeContext';
 
 const { Title } = Typography;
 const { RangePicker } = DatePicker;
@@ -55,7 +54,6 @@ const Alerts = () => {
   const [selectedStatus, setSelectedStatus] = useState<string>('all');
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [form] = Form.useForm();
-  const { isDarkMode } = useTheme();
 
   const cardStyle = {
     background: 'var(--ant-component-background)',
@@ -128,7 +126,7 @@ const Alerts = () => {
     {
       title: 'Action',
       key: 'action',
-      render: (_: any, record: any) => (
+      render: (_: any) => (
         <Space size="middle">
           <Button type="link" size="small">View</Button>
           <Button type="link" size="small">Edit</Button>

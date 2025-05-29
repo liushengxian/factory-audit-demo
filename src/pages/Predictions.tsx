@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Card, Row, Col, Typography, Statistic, Progress, Table, Select } from 'antd';
 import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { useTheme } from '../contexts/ThemeContext';
 
 const { Title } = Typography;
 const { Option } = Select;
@@ -45,8 +44,7 @@ const mockQualityMetrics = [
 ];
 
 const Predictions = () => {
-  const [selectedMetric, setSelectedMetric] = useState('all');
-  const { isDarkMode } = useTheme();
+  const [, setSelectedMetric] = useState('all');
 
   const cardStyle = {
     background: 'var(--ant-component-background)',

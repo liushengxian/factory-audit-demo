@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
 import { Row, Col, Card, Statistic, Typography, Tabs, Space } from 'antd';
 import { 
   DashboardOutlined,
@@ -27,7 +26,6 @@ const mockSensorData = [
 ];
 
 const FactoryMonitor = () => {
-  const { factoryId } = useParams();
   const [activeTab, setActiveTab] = useState('1');
 
   return (
