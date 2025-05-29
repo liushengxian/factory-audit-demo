@@ -28,7 +28,7 @@ const AppContent = () => {
         },
       }}
     >
-      <Router>
+      <Router basename={import.meta.env.PROD ? '/factory-audit-demo' : '/'}>
         <MainLayout>
           <Content className="site-content">
             <Routes>
