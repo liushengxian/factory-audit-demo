@@ -30,9 +30,6 @@ jobs:
 
     - name: Build
       run: npm run build
-      env:
-        CI: false
-        PUBLIC_URL: /factory-audit-demo
 
     - name: Deploy to GitHub Pages
       if: github.ref == 'refs/heads/main'
