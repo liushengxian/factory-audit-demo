@@ -25,10 +25,13 @@ const AppContent = () => {
         algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
         token: {
           colorPrimary: '#1890ff',
+          colorText: isDarkMode ? '#00ffff' : undefined,
+          colorTextHeading: isDarkMode ? '#00ffff' : undefined,
+          colorTextLabel: isDarkMode ? '#00ffff' : undefined,
         },
       }}
     >
-      <Router basename={import.meta.env.PROD ? '/factory-audit-demo' : '/'}>
+      <Router basename={'/factory-audit-demo'}>
         <MainLayout>
           <Content className="site-content">
             <Routes>

@@ -5,11 +5,11 @@ import { AlertOutlined } from '@ant-design/icons';
 const { Text } = Typography;
 
 // Mock video covers
-const mockVideoCovers = Array.from({ length: 10 }, (_, i) => ({
+const mockVideoCovers = Array.from({ length: 6 }, (_, i) => ({
   id: i + 1,
   title: `Camera ${String.fromCharCode(65 + i)}`,
   location: `Section ${i + 1}`,
-  thumbnail: `https://picsum.photos/160/90?random=${i + 1}`,
+  thumbnail: `https://misanya-1252867445.cos.ap-shanghai.myqcloud.com/factory-image/pexels${i + 1}.jpg`,
   status: i % 3 === 0 ? 'offline' : 'online'
 }));
 
@@ -26,7 +26,7 @@ const VideoGrid: React.FC<VideoGridProps> = ({ cardStyle }) => {
     >
       <Row gutter={[8, 8]} style={{ height: '100%' }}>
         {mockVideoCovers.map((video) => (
-          <Col span={4.8} key={video.id} style={{ height: '50%' }}>
+          <Col span={8} key={video.id} style={{ height: '50%' }}>
             <Card 
               size="small" 
               style={{ 

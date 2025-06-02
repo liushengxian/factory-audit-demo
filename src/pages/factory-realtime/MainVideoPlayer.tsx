@@ -38,9 +38,11 @@ const MainVideoPlayer: React.FC<MainVideoPlayerProps> = ({ cardStyle }) => {
         position: 'relative',
         overflow: 'hidden'
       }}>
-        <img 
-          src="https://picsum.photos/800/450?random=main" 
-          alt="Main video feed"
+        <video 
+          src="https://misanya-1252867445.cos.ap-shanghai.myqcloud.com/videos/v1.mp4"
+          autoPlay
+          loop
+          muted
           style={{ 
             width: '100%', 
             height: '100%', 
