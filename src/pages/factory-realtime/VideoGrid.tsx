@@ -9,7 +9,8 @@ const mockVideoCovers = Array.from({ length: 6 }, (_, i) => ({
   id: i + 1,
   title: `Camera ${String.fromCharCode(65 + i)}`,
   location: `Section ${i + 1}`,
-  thumbnail: `https://misanya-1252867445.cos.ap-shanghai.myqcloud.com/factory-image/pexels${i + 1}.jpg`,
+  // thumbnail: `https://misanya-1252867445.cos.ap-shanghai.myqcloud.com/factory-image/pexels${i + 1}.jpg`,
+  video: `https://misanya-1252867445.cos.ap-shanghai.myqcloud.com/videos/v${i+2}.mp4`,
   status: i % 3 === 0 ? 'offline' : 'online'
 }));
 
@@ -47,9 +48,12 @@ const VideoGrid: React.FC<VideoGridProps> = ({ cardStyle }) => {
                   position: 'relative',
                   marginBottom: '4px'
                 }}>
-                  <img 
-                    src={video.thumbnail} 
-                    alt={video.title}
+                  <video 
+                    src={video.video}
+                    autoPlay
+                    loop
+                    muted 
+                    // alt={video.title}
                     style={{ 
                       width: '100%', 
                       height: '100%', 
