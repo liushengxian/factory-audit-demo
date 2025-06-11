@@ -15,7 +15,7 @@ const VideoGrid: React.FC<VideoGridProps> = ({ cardStyle }) => {
   // Handle video click to swap with main video
   const handleVideoClick = (videoId: string) => {
     const video = gridVideos.find(v => v.id === videoId);
-    if (!video || video.status === 'offline') return;
+    if (!video) return;
     
     const { currentVideo, swapWithMainVideo } = useVideoStore.getState();
     
