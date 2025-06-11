@@ -52,7 +52,7 @@ const Region3 = styled(RegionOverlay)`
 
 const MultiRegion: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const { currentVideo, gridVideos } = useVideoStore();
+  const { currentVideo } = useVideoStore();
 
   useEffect(() => {
     // Use the current video from the store if available

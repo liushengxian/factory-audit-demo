@@ -37,7 +37,7 @@ const ZoomOverlay = styled.div`
 
 const FocusZoom: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const { currentVideo, gridVideos } = useVideoStore();
+  const { currentVideo } = useVideoStore();
 
   useEffect(() => {
     // Use the current video from the store if available
