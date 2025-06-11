@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Row, Col } from 'antd';
 import SensorCharts from './SensorCharts';
 import SystemConsole from './SystemConsole';
 import MainVideoPlayer from './MainVideoPlayer';
 import VideoGrid from './VideoGrid';
+import { useVideoStore } from '../../stores/videoStore';
 
 const FactoryRealtimeV2: React.FC = () => {
   const cardStyle = {
@@ -11,6 +12,14 @@ const FactoryRealtimeV2: React.FC = () => {
     borderColor: 'var(--ant-border-color-split)',
     height: '100%'
   };
+
+  // Reset video store when component unmounts to ensure clean state
+  useEffect(() => {
+    // Reset videos when component unmounts
+    return () => {
+      useVideoStore.getState().resetVideos();
+    };
+  }, []);
 
   return (
     <div style={{ height: 'calc(100vh - 120px)', padding: 0 }}>

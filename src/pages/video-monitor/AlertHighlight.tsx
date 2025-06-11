@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { Card, Typography } from 'antd';
 import styled from 'styled-components';
+import { useVideoStore } from '../../stores/videoStore';
 
 const { Title } = Typography;
 
@@ -42,13 +43,18 @@ const HighlightOverlay = styled.div`
 
 const AlertHighlight: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const { gridVideos } = useVideoStore();
+  
+  // Use a specific grid video (for example, the first one with "offline" status)
+  const alertVideo = gridVideos.find(v => v.status === 'offline') || gridVideos[0];
 
   useEffect(() => {
-    // Simulate video source - replace with actual video source
-    if (videoRef.current) {
-      videoRef.current.src = 'https://example.com/sample-video.mp4';
+    if (videoRef.current && alertVideo) {
+      videoRef.current.src = alertVideo.url;
+      videoRef.current.load();
+      videoRef.current.play().catch(err => console.error("Video play error:", err));
     }
-  }, []);
+  }, [alertVideo]);
 
   return (
     <Card>

@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { Card, Typography } from 'antd';
 import styled from 'styled-components';
+import { useVideoStore } from '../../stores/videoStore';
 
 const { Title } = Typography;
 
@@ -51,13 +52,16 @@ const Region3 = styled(RegionOverlay)`
 
 const MultiRegion: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const { currentVideo, gridVideos } = useVideoStore();
 
   useEffect(() => {
-    // Simulate video source - replace with actual video source
-    if (videoRef.current) {
-      videoRef.current.src = 'https://example.com/sample-video.mp4';
+    // Use the current video from the store if available
+    if (videoRef.current && currentVideo) {
+      videoRef.current.src = currentVideo.url;
+      videoRef.current.load();
+      videoRef.current.play().catch(err => console.error("Video play error:", err));
     }
-  }, []);
+  }, [currentVideo]);
 
   return (
     <Card>

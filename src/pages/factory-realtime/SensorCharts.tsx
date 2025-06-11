@@ -3,7 +3,8 @@ import { Card, Row, Col, Statistic } from 'antd';
 import { 
   FireOutlined, 
   CloudOutlined, 
-  ExperimentOutlined
+  ExperimentOutlined,
+  ArrowUpOutlined
 } from '@ant-design/icons';
 import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area, LineChart, Line } from 'recharts';
 
@@ -80,7 +81,11 @@ const SensorCharts: React.FC<SensorChartsProps> = ({ cardStyle }) => {
               <Statistic
                 title="Humidity"
                 value={47.2}
-                suffix="%"
+                suffix={
+                  <>
+                    % <ArrowUpOutlined style={{ color: '#f5222d', fontSize: '14px' }} />
+                  </>
+                }
                 prefix={<CloudOutlined style={{ color: '#1890ff' }} />}
                 valueStyle={{ fontSize: '16px' }}
               />
