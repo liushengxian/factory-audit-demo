@@ -27,8 +27,8 @@ const DEFAULT_GRID_VIDEOS: Video[] = Array.from({ length: 6 }, (_, i) => ({
   title: `Camera ${String.fromCharCode(65 + i)}`,
   url: `https://misanya-1252867445.cos.ap-shanghai.myqcloud.com/videos/v${i + 2}.mp4`,
   location: `Section ${i + 1}`,
-  status: i === 4 ? 'offline' : 'online',
-  streamStatus: i === 4 ? 'error' : 'active',
+  status: i === 5 ? 'offline' : 'online',
+  streamStatus: i === 5 ? 'error' : 'active',
   resolution: '1280x720',
   timestamp: new Date().toISOString()
 }));
