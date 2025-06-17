@@ -6,26 +6,26 @@ const { Text } = Typography;
 
 // Mock console logs
 const initialConsoleLogs = [
-  { id: 1, time: '2024-03-15 14:32:15', type: 'info', message: 'Sensor calibration completed successfully', source: 'Temperature Sensor #1' },
-  { id: 2, time: '2024-03-15 14:31:42', type: 'warning', message: 'Humidity level approaching upper threshold', source: 'Humidity Sensor #2' },
-  { id: 3, time: '2024-03-15 14:30:08', type: 'error', message: 'Connection timeout to pressure sensor', source: 'Pressure Sensor #3' },
-  { id: 4, time: '2024-03-15 14:29:35', type: 'info', message: 'Data backup completed', source: 'System' },
-  { id: 5, time: '2024-03-15 14:28:12', type: 'info', message: 'Quality check passed for Line A', source: 'Quality Control' },
-  { id: 6, time: '2024-03-15 14:27:48', type: 'warning', message: 'Machine temperature elevated', source: 'Machine Monitor' },
+  { id: 1, time: '2024-03-15 14:32:15', type: 'info', message: 'FCCA audit commenced - Facility assessment initiated', source: 'FCCA Audit Team' },
+  { id: 2, time: '2024-03-15 14:31:42', type: 'warning', message: 'Minor defect: Worker break area lacks adequate seating', source: 'Worker Welfare Audit' },
+  { id: 3, time: '2024-03-15 14:30:08', type: 'error', message: 'Major defect: Overtime records exceed regulatory limits', source: 'Labor Standards' },
+  { id: 4, time: '2024-03-15 14:29:35', type: 'info', message: 'Compliance verified: Age verification documents complete', source: 'Child Labor Prevention' },
+  { id: 5, time: '2024-03-15 14:28:12', type: 'warning', message: 'Finding: Machine safety guards require adjustment', source: 'Machine Safety Audit' },
+  { id: 6, time: '2024-03-15 14:27:48', type: 'error', message: 'Critical defect: Electrical panel access obstructed', source: 'Electrical Safety' },
 ];
 
 // Additional system messages for auto-generation
 const systemMessages = [
-  { type: 'info', message: 'System health check completed', source: 'System Monitor' },
-  { type: 'info', message: 'Network connectivity verified', source: 'Network Service' },
-  { type: 'warning', message: 'CPU usage above 80%', source: 'Performance Monitor' },
-  { type: 'info', message: 'Database synchronization complete', source: 'Database Service' },
-  { type: 'warning', message: 'Disk space running low on drive C:', source: 'Storage Monitor' },
-  { type: 'error', message: 'Failed to connect to external API', source: 'API Gateway' },
-  { type: 'info', message: 'User authentication successful', source: 'Auth Service' },
-  { type: 'warning', message: 'High memory usage detected', source: 'Memory Monitor' },
-  { type: 'info', message: 'Scheduled maintenance completed', source: 'Maintenance Service' },
-  { type: 'error', message: 'SSL certificate expires in 7 days', source: 'Security Monitor' },
+  { type: 'info', message: 'FCCA audit checkpoint: Working hours compliance verified', source: 'FCCA Audit System' },
+  { type: 'warning', message: 'Minor defect: Fire extinguisher inspection overdue by 3 days', source: 'Safety Compliance' },
+  { type: 'error', message: 'Major defect: Emergency exit blocked in Building C', source: 'Safety Audit' },
+  { type: 'info', message: 'Environmental compliance: Waste segregation standards met', source: 'Environmental Audit' },
+  { type: 'warning', message: 'Minor defect: Personal protective equipment not properly stored', source: 'Workplace Safety' },
+  { type: 'error', message: 'Critical defect: Chemical storage ventilation system malfunction', source: 'Chemical Safety' },
+  { type: 'info', message: 'Labor standards verification: Break time compliance confirmed', source: 'Labor Compliance' },
+  { type: 'warning', message: 'Finding: Training records incomplete for 3 operators', source: 'Training Audit' },
+  { type: 'error', message: 'Major defect: First aid kit expired medications found', source: 'Health & Safety' },
+  { type: 'warning', message: 'Observation: Housekeeping standards below expectation in Zone 2', source: 'Facility Audit' },
 ];
 
 interface SystemConsoleProps {
